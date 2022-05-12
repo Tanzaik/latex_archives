@@ -1,0 +1,89 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts, amssymb, tikz}
+\usepackage[hmargin=0.5in,vmargin=0.5in]{geometry}
+
+
+\begin{document}
+\hfill Tanzim Amin\\
+\begin{enumerate}
+\item A skydiver weighing 180 lbs (including equipment) falls vertically downward from an altitude of 5000 ft
+and opens the parachute after 10 s of free fall. Assume that the force of air resistance, which is directed
+opposite to the velocity, is of magnitude $0.75 \vert v \vert$ when the parachute is closed and is of
+magnitude $12 \vert v \vert$ when the parachute is open, where the velocity \textit{v} is measured in ft/s.\\
+Notation: We let $v_1(t)$ and $s_1(t)$ be the velocity and position of the skydiver before the parachute opens
+and $v_2(t)$ and $s_2(t)$ be the velocity and position of the skydiver after the parachute opens.
+\begin{enumerate}
+\item Find the speed of the skydiver when the parachute opens.\\
+To find the velocity we solve the differential equation $mv_1'=-mg-0.75v_1$ with initial condition $v_1(0)=0$
+to get
+\begin{equation}
+v_1(t)=-240+240e^{-0.1333t}.
+\end{equation}
+The speed of the skydiver when the parachute opens is $\vert v_1(10)\vert = 176.7 \text{ ft/sec} $
+\item Find the distance fallen before the parachute opens.\\
+To find the distance we must find the position which is found by solving the differential equation
+$s_1'(t) = v_1(t)$ with initial condition $s_1(0) = 5000$ where $v_1(t)$ is from (1). The solution is
+\begin{equation}
+s_1(t)=16800-240t-1800e^{-0.1333t}.
+\end{equation}
+The distance the skydiver has fallen before the parachute opens is $5000 - s_1(10) = 1074.5$ ft.
+\item What is the limiting velocity $v_L$ after the parachute opens?\\
+To find the limiting velocity after the parachute opens, we must solve the differential equation\\ $mv_2'=-
+mg-12v_2$ with initial condition $v_2(0)=-176.7$ to get
+\begin{equation}
+v_2(t)=-15-23.2e^{-32t/15}
+\end{equation}
+then take the limit to get
+\begin{equation}
+ v_L = \displaystyle{\lim_{t \to \infty} v_2(t)=-15 \text{ ft/sec}}
+\end{equation}
+\item Determine how long the skydiver is in the air after the parachute opens.\\
+We find the position after the parachute opens by solving the differential equation
+\begin{equation}
+s_2'(t)=v_2(t) \hspace{0.5cm}s_2(0)=s_1(10)=3925.4
+\end{equation}
+where $v_2$ is from (3) to get the solution
+\begin{equation}
+s_2(t)=3849.72-15t+75.814e^{-32t/15}
+\end{equation}
+and solve $s_2(t)=0$ to get $t=256.6$ seconds which implies that the person is in the air for 266.6 seconds.
+1
+\item Plot the graph of velocity versus time and position versus time from the beginning of the fall until the
+skydiver reaches the ground.\\
+\includegraphics[scale=0.2]{VELOCITYGRAPH.png}}
+\includegraphics[scale=0.2]{PARACHUTE GRAPH.png}}
+\end{enumerate}
+\pagebreak
+\item A tank that has a capacity of 50 gallons is initially filled with 20 gallons of liquid where 2 lbs of
+salt has been dissolved. At time $t=0$ a solution that has a salt concentration of $\frac{1}{2}$ lb/gal
+enters the tank at a rate of 4 gal/min. At the same time the well mixed solution starts draining from the
+tank at 3 gal/min.\\
+Notation: Let $A_1(t)$ be the amount of salt (in lbs) in the tank before it fills up and $A_2(t)$ be the
+amount of salt in the tank after it starts to overflow. Time is measured in minutes.
+\begin{enumerate}
+\item Derive the equation that described the amount of salt in the tank at any time before the tank fills up.\
+\
+We solve the differential equation $\frac{dA_1}{dt}=2-\frac{3A_1}{20+t}$, where $A_1(0)=2$, to get
+\begin{equation}
+A_1(t)=\dfrac{37+t}{2}-\dfrac{835774.5}{(37+t)^3}
+\end{equation}
+\item How much salt is in the tank at the time when the tank becomes full?\\
+The tank fills up at $t=63$ minutes so there will be $A_1(63)=99.1$ lbs of salt.\\
+\item If the tank is then allowed to overflow, derive the equation that described the amount of salt in the
+tank at any time after it has started to overflow.\\
+Now we solve the differential equation $\frac{dA_2}{dt}=2-\frac{4A_2}{50}$, were $A_2(0)=A_1(63)=-10.44$ to
+get
+\begin{equation}
+A_2(t)=50-10.44e^{-2t/25}
+\end{equation}
+\item How much salt is in the tank at time 100 minutes after the problem starts? \\
+Since the tank fills up after 63 minutes, the amount of salt will be $A_2(37)=47.62$ lbs.\\
+\item Create a beautiful graph done in Mathematica that shows the amount of salt in the tank for values of t
+from 0 to 100. \\
+\begin{center}
+\includegraphics[scale=0.7]{TANKGRAPH.png}
+\end{center}
+\end{enumerate}
+\end{enumerate}
+\end{document}
