@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[colorlinks]{hyperref}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsmath,cancel,color,mathrsfs}
+\newcommand{\mycan}[2]{{\textcolor{red}{\cancelto{#2}{\textcolor{blue}
+{#1}}}}}
+\begin{document}
+\hfill Tanzim Amin
+
+\hfill Exam 3 Take Home
+\\
+Derivation of $\mathscr{L} \{ t \} $:
+\begin{align*}
+\mathscr{L} \{ t \} &= \displaystyle{\int_0^{\infty}
+t e^{-st} \, dt}\\
+&=\lim_{b \rightarrow \infty}  \dfrac{-t}{s}e^{-st} - \dfrac{1}{s^2}e^{-st}\bigg|_0^{b}\\ 
+\newline\\
+&=\lim_{b \rightarrow \infty} \, \left[\left(\mycan{\dfrac{-b}{s}e^{-sb}}{0} - \mycan{\dfrac{1}{s^2}e^{-sb}}{0}\right) - \left(\mycan{\dfrac{-0}{s}e^{-s(0)}}{0}- \dfrac{1}{s^2}e^{-s(0)}\right)\right]\\
+\newline\\
+&= 0 - \left(0 - \dfrac{1}{s^2}\right)\\
+\newline\\
+&= \dfrac{1}{s^2}, \quad  s > 0\\
+\end{align*}
+\textmd{Derivation of $\mathscr{L} \{ \cos(kt) \} $}:
+\end{center}
+\begin{center}$\mathscr{L} \{ \cos(kt) \} &= \displaystyle{\int_0^{\infty}e^{-st}\cos(kt) \, dt}\\\end{center}
+&= \lim\limits_{N \to \infty}
+\displaystyle{\int_0^{N}e^{-st}\cos(kt)dt}\\ 
+\newline\\
+\int e^{-st}\cos(kt) \, dt  {\color{green} + \int\dfrac{s^2}{k^2}e^{-st}\cos(kt) \, dt} = \dfrac{e^{-st}}{k}\sin(kt) \ - \dfrac{se^{-st}}{k^2}\cos(kt)-\int\dfrac{s^2}{k^2}e^{-st}\cos(kt) \, dt 
+{\color{green} + \int\dfrac{s^2}{k^2}e^{-st}\cos(kt) \, dt} \\ \newline\\
+\dfrac{k^2+s^2}{k^2}\int e^{-st}\cos(kt) \, dt = \dfrac{e^{-st}}{k}\sin(kt) - \dfrac{se^{-st}}{k^2}\cos(kt)\\
+\newline\\
+&= \dfrac{k^2}{s^2+k^2}\left(\dfrac{e^{-st}}{k}\sin(kt)- \dfrac{se^{-st}}{k^2}\cos(kt)\right)\\ 
+\newline\\
+&=\lim_{N \rightarrow \infty}\left(\dfrac{k}{s^2+k^2}e^{-st}\sin(kt)-\dfrac{s}{s^2+k^2}e^{-st}\cos(kt)\right)\bigg|_0^{N}\\ 
+\newline\\
+&=\lim_{N \rightarrow \infty}\left(\mycan{\dfrac{k}{s^2+k^2}e^{-sN}\sin(kN)}{0}-\mycan{\dfrac{s}{s^2+k^2}e^{-sN}\cos(kN)}{0}\right) - \left(\mycan{\dfrac{k}{s^2+k^2}e^{-s(0)}\sin(k*0)}{0}- \dfrac{s}{s^2+k^2}e^{-s(0)}\cos(k*0)\right)\\
+&= 0 - \left(0 - \dfrac{s}{s^2+k^2}\right)\\ 
+\newline\\
+&= \dfrac{s}{s^2+k^2}, \quad s>0
+
+
+
+
+\end{align*}
+\end{document}
