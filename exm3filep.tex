@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[colorlinks]{hyperref}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsmath,cancel,color,mathrsfs}
+\newcommand{\mycan}[2]{{\textcolor{red}{\cancelto{#2}{\textcolor{blue}
+{#1}}}}}
+\begin{document}
+\hfill Tanzim Amin
+
+\hfill Exam 3 Take Home
+\\
+Derivation of $\mathscr{L} \{ t \} $:
+\begin{align*}
+\mathscr{L} \{ t \} &= \displaystyle{\int_0^{\infty}
+t e^{-st} \, dt}\\
+&=\lim_{b \rightarrow \infty}  \dfrac{-t}{s}e^{-st} - \dfrac{1}{s^2}e^{-st}\bigg|_0^{b}\\ 
+\newline\\
+&=\lim_{b \rightarrow \infty} \, \left[\left(\mycan{\dfrac{-b}{s}e^{-sb}}{0} - \mycan{\dfrac{1}{s^2}e^{-st}}{0}\right) - \left(\mycan{\dfrac{0}{s}e^{-s(0)}}{0}- \dfrac{1}{s^2}e^{-s(0)}\right)\right]\\
+&= 0 - \left(0 - \dfrac{1}{s^2}\right)\\
+&= \dfrac{1}{s^2}, \quad  s > 0\\
+\newline\\
+\textmd{Derivation of $\mathscr{L} \{ \cos(kt) \} $}\\
+\end{align*}
+\begin{align*} \end{center}
+\begin{center}\mathscr{L} \{ \cos(kt) \} &= \displaystyle{\int_0^{\infty}e^{-st}\cos(kt) \, dt}\\\end{center}
+&= \lim_{N \rightarrow \infty} \displaystyle{\int_0^{N}e^{-st}\cos(kt) \, dt}\\
+\int e^{-st}\cos(kt) \, dt  {\color{green} + \int\dfrac{s^2}{k^2}e^{-st}\cos(kt) \, dt} = \dfrac{e^{-st}}{k}\sin(kt) \ - \dfrac{se^{-st}}{k^2}\cos(kt)-\int\dfrac{s^2}{k^2}e^{-st}\cos(kt) \, dt  
+{\color{green} + \int\dfrac{s^2}{k^2}e^{-st}\cos(kt) \, dt} \\
+\dfrac{k^2+s^2}{k^2}\int e^{-st}\cos(kt) \, dt = \dfrac{e^{-st}}{k}\sin(kt) - \dfrac{se^{-st}}{k^2}\cos(kt)\\
+&= \dfrac{k^2}{s^2+k^2}\left(\dfrac{e^{-st}}{k}\sin(kt)- \dfrac{se^{-st}}{k^2}\cos(kt)\right)//
+&= \lim_{N \rightarrow \infty}
+\end{align*}
+\end{document}
